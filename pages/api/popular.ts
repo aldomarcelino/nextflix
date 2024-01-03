@@ -18,8 +18,8 @@ export default async function handler(request: NextApiRequest, response: NextApi
     const result = await axios().get(`/${type}/popular`, {
       params: {
         api_key: apiKey,
-        watch_region: 'US', 
-        language: 'en-US',
+        watch_region: 'US',
+        language: 'en-US'
       }
     });
     const data = parse(result.data.results, type as MediaType);
