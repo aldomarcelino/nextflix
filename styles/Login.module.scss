@@ -20,15 +20,17 @@
 
   &__bgImage {
     z-index: 0;
-    background-color: #0e0e0e99;
+    background-color: #00000099;
   }
 
   &__card {
+    height: 400px;
+    width: 400px;
     margin: 1rem;
     padding: 1.5rem;
     text-align: left;
     color: inherit;
-    background-color:$background-overlay;
+    background-color: $background-overlay;
     color: $white;
     text-decoration: none;
     z-index: 100;
@@ -39,7 +41,7 @@
       padding: 0.7rem;
       text-align: center;
       border-radius: 0.2rem;
-      min-width: 18rem ;
+      min-width: 18rem;
       transition: linear 200ms ease-in-out;
 
       &:hover {
@@ -49,6 +51,22 @@
       }
     }
   }
+}
 
+.wrapInput {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
 
+.textField {
+  height: 58px;
+  width: 100%;
+  background: #333;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 1rem;
+  padding: 0 20px;
 }

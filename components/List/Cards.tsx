@@ -11,10 +11,11 @@ const Button = dynamic(import('../Button'));
 
 interface CardsProps {
   defaultCard?: boolean;
+  original?: boolean;
   item: Media;
 }
 
-export default function Cards({ defaultCard = true, item }: CardsProps): React.ReactElement {
+export default function Cards({ defaultCard = true, item, original = false }: CardsProps): React.ReactElement {
   const style = defaultCard ? styles.card : styles.longCard;
   const infoStyle = defaultCard ? styles.cardInfo : styles.more;
   const { title, poster, banner, rating, genre } = item;
@@ -50,14 +51,14 @@ export default function Cards({ defaultCard = true, item }: CardsProps): React.R
             <span className={styles.greenText}>{`${rating * 10}% match`}</span>
             {/* <span className={styles.regularText}>length </span> */}
           </div>
-          {renderGenre(genre)}
+          {renderGenre(genre, original)}
         </div>
       </div>
     </div>
   );
 }
 
-function renderGenre(genre: Genre[]) {
+function renderGenre(genre: Genre[], original: boolean) {
   return (
     <div className={styles.row}>
       {genre.map((item, index) => {

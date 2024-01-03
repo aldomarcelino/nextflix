@@ -8,7 +8,7 @@ import { Genre } from '../../types';
 
 export default function Modal() {
   const { modalData, setIsModal, isModal } = useContext(ModalContext);
-  const { title, banner, rating, overview, genre } = modalData;
+  const { title, banner, rating, overview, genre, moviecast } = modalData;
 
   return (
     <div className={styles.container} style={{ display: isModal ? 'flex' : 'none' }}>
@@ -35,6 +35,18 @@ export default function Modal() {
           <div className={styles.column}>{overview}</div>
           <div className={styles.column}>
             <div className={styles.genre}>Genre: {renderGenre(genre)} </div>
+            {moviecast?.length ? (
+              <>
+                <div className={styles.genre}>Cast:</div>
+                <div className={styles.CastCast}>
+                  {moviecast.map((item, id) => (
+                    <img key={id + 'img'} alt={title} src={item.profilePict} className={styles.image} />
+                  ))}
+                </div>
+              </>
+            ) : (
+              ''
+            )}
           </div>
         </div>
       </div>

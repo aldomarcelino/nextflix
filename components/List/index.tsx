@@ -10,6 +10,7 @@ const FeatureCard = dynamic(import('./FeatureCards'));
 
 interface ListProps {
   defaultCard?: boolean;
+  original?: boolean;
   heading: string;
   topList?: boolean;
   endpoint: string;
@@ -19,10 +20,13 @@ export default function List({
   defaultCard = true,
   heading,
   topList = false,
-  endpoint
+  endpoint,
+  original = false
 }: ListProps): React.ReactElement {
   const [media, setMedia] = useState<Media[]>([]);
- 
+
+  console.log(original, '<<original');
+
   async function getEndpoint() {
     try {
       const result = await axios.get(endpoint);
@@ -44,13 +48,7 @@ export default function List({
               return <FeatureCard key={index} index={index + 1} item={item} />;
             }
           } else {
-            return (
-              <Cards
-                key={index}
-                defaultCard={defaultCard}
-                item={item}
-              />
-            );
+            return <Cards key={index} defaultCard={defaultCard} item={item} original={original} />;
           }
         })}
       </div>

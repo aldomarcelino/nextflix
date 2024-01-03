@@ -9,7 +9,7 @@ import { ROUTES } from '../../config/route';
 import { CaretDown } from '../../utils/icons';
 import styles from '../../styles/Navbar.module.scss';
 
-const Dialog = dynamic(import('../Dialog'))
+const Dialog = dynamic(import('../Dialog'));
 
 export default function Profile(): React.ReactElement {
   const [visible, setVisible] = useState<boolean>(false);
@@ -21,7 +21,7 @@ export default function Profile(): React.ReactElement {
 
   const onClose = (): void => setVisible(false);
 
-  const onSignout = (): Promise<boolean> => router.push(ROUTES.HOME);
+  const onSignout = (): Promise<boolean> => router.push('/');
 
   const caretAnimation = {
     animate: visible ? 'up' : 'down',

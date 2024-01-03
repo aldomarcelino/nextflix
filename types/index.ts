@@ -33,6 +33,7 @@ export type Media = {
   banner: string;
   rating: number;
   genre: Genre[];
+  moviecast: [];
 };
 
 export type ImageType = 'poster' | 'original';
@@ -42,4 +43,5 @@ export type Section = {
   endpoint: string;
   defaultCard?: boolean;
   topList?: boolean;
+  original?: boolean;
 };

@@ -154,3 +154,18 @@
     max-width: 90%;
   }
 }
+
+.CastCast {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+  width: 384px;
+  overflow-x: auto;
+}
+
+.image {
+  height: 100px;
+  width: 90px;
+  object-fit: cover;
+  border-radius: 5px;
+}

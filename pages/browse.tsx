@@ -27,6 +27,7 @@ export default function Browse(): React.ReactElement {
                 endpoint={item.endpoint}
                 defaultCard={item?.defaultCard}
                 topList={item?.topList}
+                original={item?.original}
               />
             );
           })}
@@ -38,15 +39,17 @@ export default function Browse(): React.ReactElement {
 
 const sections: Section[] = [
   {
-    heading: 'Popular on Nextflix',
-    endpoint: '/api/popular?type=tv'
+    heading: 'Original on Nextflix',
+    endpoint: '/api/public',
+    defaultCard: false,
+    original: true
   },
   {
     heading: 'Horror Movies',
     endpoint: '/api/discover?type=movie&genre=27'
   },
   {
-    heading: 'Only on Nextflix',
+    heading: 'Popular on Nextflix',
     endpoint: '/api/discover?type=tv',
     defaultCard: false
   },

@@ -33,7 +33,7 @@
 
     @include for-mobile-only {
       padding: 0.6rem 0rem;
-    }  
+    }
   }
 
   &__left {
@@ -63,7 +63,7 @@
       flex-direction: row;
       align-items: center;
       justify-content: space-around;
-      
+
       @include for-mobile-only {
         margin: 0 0.2rem;
       }
@@ -184,8 +184,7 @@
         background-color: $secondary;
         opacity: 0.7;
         color: $white;
-        position: absolute;
-        margin-top: 6rem;
+        border-radius: 4px;
         padding: 0.6rem 0.9rem;
         right: 8;
         border: $button-border solid 1.5px;
@@ -194,6 +193,7 @@
 
         &:hover {
           border-color: $white;
+          color: red;
         }
       }
     }

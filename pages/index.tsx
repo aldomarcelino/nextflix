@@ -10,8 +10,8 @@ export default function Home(): React.ReactElement {
   const router: NextRouter = useRouter();
 
   const onSignIn = () => {
-    router.push(ROUTES.BROWSE)
-  }
+    router.push(ROUTES.BROWSE);
+  };
 
   return (
     <div className={styles.container}>
@@ -24,11 +24,15 @@ export default function Home(): React.ReactElement {
       <main className={styles.main}>
         <Image src={LoginBg} alt='background image' placeholder='blur' layout='fill' className={styles.main__bgImage} />
         <div className={styles.main__card}>
-          <h1>
-            Nextflix
-          </h1>
+          <h1>Nextflix</h1>
+          <div className={styles.wrapInput}>
+            <input className={styles.textField} placeholder='Email or Phone Number' type='text' />
+            <input className={styles.textField} placeholder='Password' type='password' />
+          </div>
           <p>A simple Netflix clone built using Next.js</p>
-          <div className={styles.button} onClick={onSignIn}>Sign in</div>
+          <div className={styles.button} onClick={onSignIn}>
+            Sign in
+          </div>
         </div>
       </main>
     </div>
