@@ -70,3 +70,41 @@
   font-size: 1rem;
   padding: 0 20px;
 }
+
+.signUp {
+  margin-top: 16px;
+  cursor: pointer;
+  width: 64px;
+  transition: all ease 0.3s;
+}
+.signUp:hover {
+  color: red;
+}
+.containSecond {
+  @extend .main__card;
+  background: #000009;
+  width: 500px;
+  height: 630px;
+}
+.showpass {
+  margin: 12px 0 24px;
+  text-align: end;
+  cursor: pointer;
+  transition: all ease 0.2s;
+}
+.showpass:hover {
+  color: rgb(162, 162, 162);
+}
+.message {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  font-size: 32px;
+  transition: all ease 0.2s;
+  text-align: center;
+}
+.message:hover {
+  color: red;
+}
