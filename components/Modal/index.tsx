@@ -40,7 +40,12 @@ export default function Modal() {
                 <div className={styles.genre}>Cast:</div>
                 <div className={styles.CastCast}>
                   {moviecast.map((item, id) => (
-                    <img key={id + 'img'} alt={title} src={item.profilePict} className={styles.image} />
+                    <div key={id + 'img'}>
+                      <img alt={title} src={item.profilePict} className={styles.image} />
+                      <div className={styles.genre} style={{ fontSize: '14px', textAlign: 'center' }}>
+                        {item.name}
+                      </div>
+                    </div>
                   ))}
                 </div>
               </>
