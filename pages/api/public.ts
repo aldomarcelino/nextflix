@@ -16,8 +16,8 @@ export default async function handler(request: NextApiRequest, response: NextApi
       ...v,
       rating: v.rating / 10,
       overview: v.synopsis,
-      poster: `https://image.tmdb.org/t/p/w500${v.poster_path}`,
-      banner: `https://image.tmdb.org/t/p/original${v.imgUrl}`,
+      poster: v.id > 20 ? v.imgUrl : `https://image.tmdb.org/t/p/w500${v.poster_path}`,
+      banner: v.id > 20 ? v.imgUrl : `https://image.tmdb.org/t/p/original${v.imgUrl}`,
       genre: v.GenreMovies.map(i => i.Genre),
       moviecast: v.MovieCasts.map(t => t.Cast)
     }));
